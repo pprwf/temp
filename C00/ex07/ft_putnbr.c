@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: peerapic <peerapic@student.42.fr>          +#+  +:+       +#+        */
+/*   By: peerapic <peerapic@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/08 19:39:44 by peerapic          #+#    #+#             */
-/*   Updated: 2026/07/08 22:28:43 by peerapic         ###   ########.fr       */
+/*   Created: 2026/07/23 18:08:24 by peerapic          #+#    #+#             */
+/*   Updated: 2026/07/23 19:57:23 by peerapic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,16 @@
 
 void	ft_putnbr(int nb)
 {
-	if (nb < 0)
+	long long	n;
+
+	n = nb;
+	if (n < 0)
 	{
 		write(1, "-", 1);
-		if (nb == -2147483648)
-		{
-			write(1, "2", 1);
-			nb = -147483648;
-		}
-		nb = -nb;
+		n = -n;
 	}
-
-	if (nb >= 10)
-		ft_putnbr(nb / 10);
-
-	nb = nb % 10 + '0';
+	if (n >= 10)
+		ft_putnbr(n / 10);
+	nb = (n % 10) + '0';
 	write(1, &nb, 1);
 }

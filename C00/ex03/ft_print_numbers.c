@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_numbers.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: peerapic <peerapic@student.42.fr>          +#+  +:+       +#+        */
+/*   By: peerapic <peerapic@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/08 01:20:21 by peerapic          #+#    #+#             */
-/*   Updated: 2026/07/08 17:28:51 by peerapic         ###   ########.fr       */
+/*   Created: 2026/07/23 18:06:28 by peerapic          #+#    #+#             */
+/*   Updated: 2026/07/23 18:06:33 by peerapic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ void	ft_print_numbers(void)
 	char	c;
 
 	c = '0';
-
 	while (c <= '9')
 	{
 		write(1, &c, 1);

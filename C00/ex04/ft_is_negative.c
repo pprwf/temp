@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_is_negative.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: peerapic <peerapic@student.42.fr>          +#+  +:+       +#+        */
+/*   By: peerapic <peerapic@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/08 01:20:29 by peerapic          #+#    #+#             */
-/*   Updated: 2026/07/08 17:59:40 by peerapic         ###   ########.fr       */
+/*   Created: 2026/07/23 18:06:52 by peerapic          #+#    #+#             */
+/*   Updated: 2026/07/23 19:56:44 by peerapic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,7 @@
 void	ft_is_negative(int n)
 {
 	if (n < 0)
-	{
 		write(1, "N", 1);
-	}
 	else
-	{
 		write(1, "P", 1);
-	}
 }

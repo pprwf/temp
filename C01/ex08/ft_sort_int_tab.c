@@ -1,43 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_comb2.c                                   :+:      :+:    :+:   */
+/*   ft_sort_int_tab.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: peerapic <peerapic@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/23 18:07:44 by peerapic          #+#    #+#             */
-/*   Updated: 2026/07/23 19:57:12 by peerapic         ###   ########.fr       */
+/*   Created: 2026/07/24 22:34:47 by peerapic          #+#    #+#             */
+/*   Updated: 2026/07/24 22:45:22 by peerapic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_putchar(char c1, char c2, char c3, char c4)
+void	ft_sort_int_tab(int *tab, int size)
 {
-	write(1, &c1, 1);
-	write(1, &c2, 1);
-	write(1, " ", 1);
-	write(1, &c3, 1);
-	write(1, &c4, 1);
-}
+	int	i;
+	int	low;
 
-void	ft_print_comb2(void)
-{
-	int	f;
-	int	l;
-
-	f = 0;
-	l = f + 1;
-	while (f <= 98)
+	while (size > 1)
 	{
-		while (l <= 99)
+		i = 0;
+		while (i < size - 1)
 		{
-			ft_putchar(f / 10 + '0', f % 10 + '0', l / 10 + '0', l % 10 + '0');
-			if (f != 98 && l <= 99)
-				write(1, ", ", 2);
-			l++;
+			if (tab[i] > tab[i + 1])
+			{
+				low = tab[i];
+				tab[i] = tab[i + 1];
+				tab[i + 1] = low;
+			}
+			i++;
 		}
-		f++;
-		l = f + 1;
+		size--;
 	}
 }

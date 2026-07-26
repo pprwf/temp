@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_alphabet.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: peerapic <peerapic@student.42.fr>          +#+  +:+       +#+        */
+/*   By: peerapic <peerapic@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/08 01:20:12 by peerapic          #+#    #+#             */
-/*   Updated: 2026/07/08 20:28:47 by peerapic         ###   ########.fr       */
+/*   Created: 2026/07/23 18:04:48 by peerapic          #+#    #+#             */
+/*   Updated: 2026/07/23 18:04:52 by peerapic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,9 @@ void	ft_print_alphabet(void)
 	char	c;
 
 	c = 'a';
-
 	while (c <= 'z')
 	{
-		write(1, &c, 1);
+		write (1, &c, 1);
 		c++;
 	}
 }

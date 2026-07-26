@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: peerapic <peerapic@student.42.fr>          +#+  +:+       +#+        */
+/*   By: peerapic <peerapic@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/08 01:20:04 by peerapic          #+#    #+#             */
-/*   Updated: 2026/07/08 16:59:50 by peerapic         ###   ########.fr       */
+/*   Created: 2026/07/23 14:33:09 by peerapic          #+#    #+#             */
+/*   Updated: 2026/07/23 18:04:28 by peerapic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

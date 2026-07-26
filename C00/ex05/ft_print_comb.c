@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_comb.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: peerapic <peerapic@student.42.fr>          +#+  +:+       +#+        */
+/*   By: peerapic <peerapic@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/08 01:20:32 by peerapic          #+#    #+#             */
-/*   Updated: 2026/07/08 18:06:15 by peerapic         ###   ########.fr       */
+/*   Created: 2026/07/23 18:07:16 by peerapic          #+#    #+#             */
+/*   Updated: 2026/07/23 19:56:57 by peerapic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,7 @@ void	ft_print_comb(void)
 			{
 				ft_putchar(c1, c2, c3);
 				if (c1 != '7')
-				{
 					write(1, ", ", 2);
-				}
 				c3++;
 			}
 			c2++;

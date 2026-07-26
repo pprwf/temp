@@ -1,43 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_comb2.c                                   :+:      :+:    :+:   */
+/*   ft_strncpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: peerapic <peerapic@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/23 18:07:44 by peerapic          #+#    #+#             */
-/*   Updated: 2026/07/23 19:57:12 by peerapic         ###   ########.fr       */
+/*   Created: 2026/07/24 22:59:37 by peerapic          #+#    #+#             */
+/*   Updated: 2026/07/24 23:21:58 by peerapic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_putchar(char c1, char c2, char c3, char c4)
+char	*ft_strncpy(char *dest, char *src, unsigned int n)
 {
-	write(1, &c1, 1);
-	write(1, &c2, 1);
-	write(1, " ", 1);
-	write(1, &c3, 1);
-	write(1, &c4, 1);
-}
+	unsigned int	i;
 
-void	ft_print_comb2(void)
-{
-	int	f;
-	int	l;
-
-	f = 0;
-	l = f + 1;
-	while (f <= 98)
+	i = 0;
+	while (i < n)
 	{
-		while (l <= 99)
-		{
-			ft_putchar(f / 10 + '0', f % 10 + '0', l / 10 + '0', l % 10 + '0');
-			if (f != 98 && l <= 99)
-				write(1, ", ", 2);
-			l++;
-		}
-		f++;
-		l = f + 1;
+		dest[i] = src[i];
+		i++;
 	}
+	return (dest);
 }

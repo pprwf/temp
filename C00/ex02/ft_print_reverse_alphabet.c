@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_reverse_alphabet.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: peerapic <peerapic@student.42.fr>          +#+  +:+       +#+        */
+/*   By: peerapic <peerapic@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/08 01:20:17 by peerapic          #+#    #+#             */
-/*   Updated: 2026/07/08 17:24:15 by peerapic         ###   ########.fr       */
+/*   Created: 2026/07/23 18:05:50 by peerapic          #+#    #+#             */
+/*   Updated: 2026/07/23 18:06:04 by peerapic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ void	ft_print_reverse_alphabet(void)
 	char	c;
 
 	c = 'z';
-
 	while (c >= 'a')
 	{
 		write(1, &c, 1);

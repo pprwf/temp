@@ -1,43 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_comb2.c                                   :+:      :+:    :+:   */
+/*   ft_str_is_lowercase.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: peerapic <peerapic@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/23 18:07:44 by peerapic          #+#    #+#             */
-/*   Updated: 2026/07/23 19:57:12 by peerapic         ###   ########.fr       */
+/*   Created: 2026/07/24 23:17:00 by peerapic          #+#    #+#             */
+/*   Updated: 2026/07/24 23:17:40 by peerapic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_putchar(char c1, char c2, char c3, char c4)
+int	ft_str_is_lowercase(char *str)
 {
-	write(1, &c1, 1);
-	write(1, &c2, 1);
-	write(1, " ", 1);
-	write(1, &c3, 1);
-	write(1, &c4, 1);
-}
+	int	i;
 
-void	ft_print_comb2(void)
-{
-	int	f;
-	int	l;
-
-	f = 0;
-	l = f + 1;
-	while (f <= 98)
+	i = 0;
+	while (str[i])
 	{
-		while (l <= 99)
-		{
-			ft_putchar(f / 10 + '0', f % 10 + '0', l / 10 + '0', l % 10 + '0');
-			if (f != 98 && l <= 99)
-				write(1, ", ", 2);
-			l++;
-		}
-		f++;
-		l = f + 1;
+		if (!(str[i] >= 97 && str[i] <= 122))
+			return (0);
+		i++;
 	}
+	return (1);
 }

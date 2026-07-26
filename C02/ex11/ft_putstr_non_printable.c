@@ -1,43 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_comb2.c                                   :+:      :+:    :+:   */
+/*   ft_putstr_non_printable.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: peerapic <peerapic@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/23 18:07:44 by peerapic          #+#    #+#             */
-/*   Updated: 2026/07/23 19:57:12 by peerapic         ###   ########.fr       */
+/*   Created: 2026/07/24 23:56:22 by peerapic          #+#    #+#             */
+/*   Updated: 2026/07/25 00:08:41 by peerapic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_putchar(char c1, char c2, char c3, char c4)
+void	ft_hex(unsigned char c)
 {
-	write(1, &c1, 1);
-	write(1, &c2, 1);
-	write(1, " ", 1);
-	write(1, &c3, 1);
-	write(1, &c4, 1);
+	char	*hex;
+	char	out[3];
+
+	hex = "0123456789abcdef";
+	out[0] = '\\';
+	out[1] = hex[c / 16];
+	out[2] = hex[c % 16];
+	write(1, out, 3);
 }
 
-void	ft_print_comb2(void)
+void	ft_putstr_non_printable(char *str)
 {
-	int	f;
-	int	l;
+	int		i;
 
-	f = 0;
-	l = f + 1;
-	while (f <= 98)
+	i = 0;
+	while (str[i])
 	{
-		while (l <= 99)
-		{
-			ft_putchar(f / 10 + '0', f % 10 + '0', l / 10 + '0', l % 10 + '0');
-			if (f != 98 && l <= 99)
-				write(1, ", ", 2);
-			l++;
-		}
-		f++;
-		l = f + 1;
+		if ((str[i] < 32 || str[i] == 127))
+			ft_hex(str[i]);
+		else
+			write(1, &str[i], 1);
+		i++;
 	}
 }

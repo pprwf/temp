@@ -1,43 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_comb2.c                                   :+:      :+:    :+:   */
+/*   ft_strcapitalize.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: peerapic <peerapic@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/23 18:07:44 by peerapic          #+#    #+#             */
-/*   Updated: 2026/07/23 19:57:12 by peerapic         ###   ########.fr       */
+/*   Created: 2026/07/24 23:26:34 by peerapic          #+#    #+#             */
+/*   Updated: 2026/07/24 23:39:41 by peerapic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_putchar(char c1, char c2, char c3, char c4)
+int	is_sep(char c)
 {
-	write(1, &c1, 1);
-	write(1, &c2, 1);
-	write(1, " ", 1);
-	write(1, &c3, 1);
-	write(1, &c4, 1);
+	return (c == 9 || c == 32 || c == 43 || c == 45);
 }
 
-void	ft_print_comb2(void)
+char	*ft_strcapitalize(char *str)
 {
-	int	f;
-	int	l;
+	int	i;
+	int	cap;
 
-	f = 0;
-	l = f + 1;
-	while (f <= 98)
+	i = 0;
+	cap = 1;
+	while (str[i])
 	{
-		while (l <= 99)
-		{
-			ft_putchar(f / 10 + '0', f % 10 + '0', l / 10 + '0', l % 10 + '0');
-			if (f != 98 && l <= 99)
-				write(1, ", ", 2);
-			l++;
-		}
-		f++;
-		l = f + 1;
+		if (str[i] >= 97 && str[i] <= 122 && cap)
+			str[i] -= 32;
+		else if (str[i] >= 65 && str[i] <= 90 && !cap)
+			str[i] += 32;
+		cap = is_sep(str[i]);
+		i++;
 	}
+	return (str);
 }

@@ -6,7 +6,7 @@
 /*   By: peerapic <peerapic@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/27 04:22:32 by peerapic          #+#    #+#             */
-/*   Updated: 2026/07/27 16:25:36 by peerapic         ###   ########.fr       */
+/*   Updated: 2026/07/29 21:35:27 by peerapic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,13 @@
 
 char	*ft_strcat(char *dest, char *src)
 {
-	int	i;
-	int	j;
+	char	*start;
 
-	i = 0;
-	j = 0;
-	while (dest[i])
-		i++;
-	while (src[j])
-		dest[i++] = src[j++];
-	dest[i] = '\0';
-	return (dest);
+	start = dest;
+	while (*dest)
+		dest++;
+	while (*src)
+		*dest++ = *src++;
+	*dest = '\0';
+	return (start);
 }

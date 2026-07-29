@@ -6,7 +6,7 @@
 /*   By: peerapic <peerapic@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/27 04:25:21 by peerapic          #+#    #+#             */
-/*   Updated: 2026/07/27 17:08:48 by peerapic         ###   ########.fr       */
+/*   Updated: 2026/07/29 21:50:50 by peerapic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,16 @@ unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 
 	i = 0;
 	j = 0;
-	while (dest[i])
+	while (i < size && dest[i])
 		i++;
-	while (src[j] && sizeof(dest) < size)
-		dest[i++] = src[j++];
-	dest[i] = '\0';
-	return (i);
+	while (src[j] && (i + j + 1) < size)
+	{
+		dest[i + j] = src[j];
+		j++;
+	}
+	if (i < size)
+		dest[i + j] = '\0';
+	while (src[j])
+		j++;
+	return (i + j);
 }

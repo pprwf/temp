@@ -6,7 +6,7 @@
 /*   By: peerapic <peerapic@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/27 17:25:58 by peerapic          #+#    #+#             */
-/*   Updated: 2026/07/29 01:42:11 by peerapic         ###   ########.fr       */
+/*   Updated: 2026/07/29 22:54:59 by peerapic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,9 @@ int	ft_atoi(char *str)
 	i = 0;
 	n = 0;
 	sign = 1;
-	while (str[i] == ' ' || str[i] == 9 || str[i] == '-' || str[i] == '+')
+	while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
+		i++;
+	while (str[i] == '-' || str[i] == '+')
 	{
 		if (str[i] == '-')
 			sign = -sign;

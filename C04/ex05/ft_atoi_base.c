@@ -6,7 +6,7 @@
 /*   By: peerapic <peerapic@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/27 22:32:18 by peerapic          #+#    #+#             */
-/*   Updated: 2026/07/27 23:09:34 by peerapic         ###   ########.fr       */
+/*   Updated: 2026/07/30 00:25:15 by peerapic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,8 @@ int	check_base(char *base)
 	i = 0;
 	while (base[i])
 	{
-		if (base[i] == '+' || base[i] == '-' || base[i] == ' ')
+		if (base[i] == '+' || base[i] == '-' || base[i] == ' '
+			|| (base[i] >= 9 && base[i] <= 13))
 			return (0);
 		j = i + 1;
 		while (base[j])
@@ -47,18 +48,18 @@ int	check_base(char *base)
 	return (i);
 }
 
-long	calc(char *str, char *base, int i, long n)
+long	calc(char *str, char *base, int i, int len_base)
 {
-	int	len;
-	int	val;
+	int		val;
+	long	n;
 
-	len = check_base(base);
+	n = 0;
 	while (str[i])
 	{
 		val = get_char(str[i++], base);
 		if (val == -1)
 			break ;
-		n = (n * len) + val;
+		n = (n * len_base) + val;
 	}
 	return (n);
 }
@@ -74,9 +75,8 @@ int	ft_atoi_base(char *str, char *base)
 	if (len_base == 0)
 		return (0);
 	i = 0;
-	n = 0;
 	sign = 1;
-	while (str[i] == ' ' || (str[i] == 9))
+	while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
 		i++;
 	while (str[i] == '-' || str[i] == '+')
 	{
@@ -84,6 +84,6 @@ int	ft_atoi_base(char *str, char *base)
 			sign = -sign;
 		i++;
 	}
-	n = calc(str, base, i, n);
+	n = calc(str, base, i, len_base);
 	return (n * sign);
 }

@@ -6,7 +6,7 @@
 /*   By: peerapic <peerapic@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/27 17:14:06 by peerapic          #+#    #+#             */
-/*   Updated: 2026/07/27 17:24:34 by peerapic         ###   ########.fr       */
+/*   Updated: 2026/07/29 22:56:30 by peerapic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 void	ft_putnbr(int nb)
 {
 	long	n;
+	char	c;
 
 	n = nb;
 	if (n < 0)
@@ -24,6 +25,6 @@ void	ft_putnbr(int nb)
 	}
 	if (n > 9)
 		ft_putnbr(n / 10);
-	n = n % 10 + '0';
-	write(1, &n, 1);
+	c = n % 10 + '0';
+	write(1, &c, 1);
 }
